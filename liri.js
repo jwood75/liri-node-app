@@ -121,13 +121,13 @@ var myMovie = function(movieName) {
 var doWhatItSays = function() {
   fs.readFile("random.txt", "utf8", function(error, data) {
     console.log(data);
-    writeToLog(data);
+    writeLog(data);
     var dataArr = data.split(',')
 
     if (dataArr.length == 2) {
-      pick(dataArr[0], dataArr[1]);
+      userCommand(dataArr[0], dataArr[1]);
     } else if (dataArr.length == 1) {
-      pick(dataArr[0]);
+      userCommand(dataArr[0]);
     }
 
   });
